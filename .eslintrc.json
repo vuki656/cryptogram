@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "@dvukovic/eslint-config/core",
+    "@dvukovic/eslint-config/react",
+    "@dvukovic/eslint-config/typescript",
+    "next/core-web-vitals"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
+}
