@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "migrate": "truffle migrate",
-    "test": "truffle test"
+    "app:dev": "next dev",
+    "app:build": "next build",
+    "app:start": "next start",
+    "app:lint": "next lint",
+    "lint": "yarn app:lint && yarn tests:lint",
+    "tests:lint": "eslint ./tests",
+    "contracts:migrate": "truffle migrate",
+    "contracts:test": "truffle test"
   },
   "dependencies": {
     "next": "11.1.2",
