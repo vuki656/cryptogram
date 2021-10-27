@@ -9,6 +9,7 @@ module.exports = {
     },
     contracts_build_directory: './build/contracts/',
     contracts_directory: './contracts/',
+    migrations_directory: "./build/migrations",
     networks: {
         development: {
             host: '127.0.0.1',
@@ -16,4 +17,5 @@ module.exports = {
             port: 7545,
         },
     },
+    test_directory: './tests',
 }

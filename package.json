@@ -7,24 +7,40 @@
     "app:build": "next build",
     "app:start": "next start",
     "app:lint": "next lint",
+    "migrations:transpile": "tsc -p ./tsconfig.migrate.json --outDir ./build/migrations",
+    "migrations:run": "truffle migrate",
+    "migrations:setup": "yarn migrations:transpile && yarn migrations:run",
+    "contracts:compile": "truffle compile",
+    "contracts:test": "truffle test",
+    "contracts:typegen": "typechain --target=truffle-v5 'build/contracts/*.json'",
+    "contracts:setup": "yarn contracts:compile && yarn contracts:typegen",
+    "postinstall": "yarn contracts:setup && yarn migrations:setup",
     "lint": "yarn app:lint && yarn tests:lint",
-    "tests:lint": "eslint ./tests",
-    "contracts:migrate": "truffle migrate",
-    "contracts:test": "truffle test"
+    "tests:lint": "eslint ./tests"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.16",
+    "@chakra-ui/react": "^1.6.10",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "bn.js": "^5.2.0",
+    "framer-motion": "^4",
     "next": "11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-dropzone": "^11.4.2"
   },
   "devDependencies": {
     "@dvukovic/eslint-config": "^5.4.0",
+    "@typechain/truffle-v5": "^5.1.0",
+    "@types/node": "^16.11.6",
     "@types/react": "17.0.30",
     "autoprefixer": "^10.3.7",
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
+    "typechain": "^5.2.0",
     "typescript": "4.4.4"
   }
 }
