@@ -13,6 +13,8 @@ import * as React from 'react'
 
 import { FileUpload } from '../FileUpload'
 
+const Cryptogram = artifacts.require('Cryptogram')
+
 export const UploadDialog: React.FunctionComponent = () => {
     const { isOpen, onClose, onOpen } = useDisclosure()
 
