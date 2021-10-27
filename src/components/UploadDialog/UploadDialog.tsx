@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-undef */
 import {
     Button,
     Modal,
@@ -24,7 +23,12 @@ export const UploadDialog: React.FunctionComponent = () => {
     }
 
     const onUpload = () => {
+        console.log(1)
+    }
 
+    const onModalClose = () => {
+        onClose()
+        onRemove()
     }
 
     return (
@@ -43,7 +47,7 @@ export const UploadDialog: React.FunctionComponent = () => {
             </Button>
             <Modal
                 isOpen={isOpen}
-                onClose={onClose}
+                onClose={onModalClose}
             >
                 <ModalOverlay />
                 <ModalContent>
@@ -67,7 +71,7 @@ export const UploadDialog: React.FunctionComponent = () => {
                             Upload
                         </Button>
                         <Button
-                            onClick={onClose}
+                            onClick={onModalClose}
                             variant="ghost"
                         >
                             Cancel

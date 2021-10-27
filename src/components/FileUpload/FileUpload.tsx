@@ -20,7 +20,6 @@ export const FileUpload: React.FunctionComponent<FileUploadProps> = (props) => {
         multiple: false,
         onDrop: (files) => {
             onUpload(files[0])
-            onRemove()
         },
     })
 
